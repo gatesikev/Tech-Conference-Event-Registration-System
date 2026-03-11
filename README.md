@@ -1,18 +1,41 @@
-# React + Vite
+# Tech Conference Event Registration System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+A **React web application** that allows users to register for a tech conference through a structured, multi-step process. Users can view event details, fill out a registration form, review their submission, confirm registration, and return later to see saved data stored in the browser.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Event information page with conference details  
+- Multi-step registration form (name, email, phone, organization, ticket type, dietary requirements, notes)  
+- Review page to verify data before confirming  
+- Confirmation page with success message  
+- Persistent registration using **localStorage**  
+- Automatic detection of returning users  
+- Cancel registration functionality  
+- Responsive interface using **Tailwind CSS**
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Technologies
+- **React** & **React Router**  
+- **Tailwind CSS** for responsive styling  
+- **JavaScript (ES6+)**  
+- **Local Storage API**  
+- **Vite** for project setup and development
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+```plaintext
+src
+├── components
+│   └── Navbar.jsx
+├── pages
+│   ├── EventInfo.jsx
+│   ├── RegisterForm.jsx
+│   ├── ReviewPage.jsx
+│   ├── Confirmation.jsx
+│   └── MyRegistration.jsx
+├── App.jsx
+└── index.css
