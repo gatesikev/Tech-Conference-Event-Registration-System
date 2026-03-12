@@ -10,6 +10,7 @@ import Confirmation from "./pages/Confirmation";
 import MyRegistration from "./pages/MyRegistration";
 import Navbar from "./components/Navbar";
 
+
 function App() {
   const [formData, setFormData] = useState({
     fullName: "",
