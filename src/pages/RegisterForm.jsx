@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function RegisterForm() {
+  
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -24,8 +25,11 @@ function RegisterForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // 1. Save to local storage immediately so other pages can see it
+    localStorage.setItem("registration", JSON.stringify(formData));
 
-    // pass form data to review page
+    // 2. Navigate to review
     navigate("/review", { state: formData });
   };
 

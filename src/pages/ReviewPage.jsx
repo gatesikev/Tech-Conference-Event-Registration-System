@@ -1,20 +1,30 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 function ReviewPage() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const formData = location.state;
+  // Try to get data from navigation state, 
+  // OR fallback to localStorage if they refreshed the page.
+  const formData = location.state || JSON.parse(localStorage.getItem("registration"));
 
   if (!formData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p>No registration data found.</p>
+        <p>No registration data found. Please register first.</p>
       </div>
     );
   }
-
+  
+  // ... rest of your code
+  // Inside your handleSubmit function in Register.jsx
+const handleSubmit = (e) => {
+  e.preventDefault();
+  // ... your form logic
+  navigate("/review", { state: formData }); // This 'state' is what Review.jsx is looking for!
+};
   const handleConfirm = () => {
     // save data to local storage
     localStorage.setItem("registration", JSON.stringify(formData));
@@ -72,7 +82,10 @@ function ReviewPage() {
 
       </div>
     </div>
+    
   );
 }
 
 export default ReviewPage;
+
+

@@ -7,7 +7,7 @@ function Confirmation() {
       <div className="bg-white shadow-lg rounded-lg p-8 text-center max-w-lg">
 
         <h1 className="text-3xl font-bold text-green-600 mb-4">
-          Registration Successful 🎉
+          Registration Successful
         </h1>
 
         <p className="text-gray-600 mb-6">
